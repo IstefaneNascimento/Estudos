@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flamengo - Paixão Nacional</title>
+    <style>
+        /* Reset e estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #c52613, #8a1b0f);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo img {
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #222;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #c52613;
+        }
+        
+        /* Conteúdo principal */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .content {
+            flex: 3;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-right: 20px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #c52613;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #c52613;
+            padding-bottom: 10px;
+        }
+        
+        .news-item {
+            margin-bottom: 30px;
+        }
+        
+        .news-item h3 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .news-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .news-item p {
+            margin-bottom: 10px;
+        }
+        
+        .news-item .date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Sidebar */
+        .next-match {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .next-match h3 {
+            color: #c52613;
+            margin-bottom: 10px;
+        }
+        
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .team {
+            text-align: center;
+        }
+        
+        .team img {
+            height: 50px;
+            margin-bottom: 5px;
+        }
+        
+        .vs {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table th {
+            background-color: #c52613;
+            color: white;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        
+        .social-links {
+            margin: 15px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .logo {
+                flex-direction: column;
+            }
+            
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://logodownload.org/wp-content/uploads/2016/09/flamengo-logo-escudo-1.png" alt="Escudo do Flamengo">
+                <h1>Clube de Regatas do Flamengo</h1>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Elenco</a></li>
+                <li><a href="#">Títulos</a></li>
+                <li><a href="#">Calendário</a></li>
+                <li><a href="#">História</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="content">
+                <h2>Últimas Notícias</h2>
+                
+                <div class="news-item">
+                    <h3>Flamengo vence clássico e segue na liderança</h3>
+                    <img src="https://s2-ge.glbimg.com/Oi3J_V1e1nK3JkX8Q3Q3Q3q3X4I=/0x0:1024x683/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/J/L/7jWQYbRkCjZQh5pXQwUw/fla-flu-2023-1.jpg" alt="Flamengo x Fluminense">
+                    <p>O Flamengo bateu o Fluminense por 2 a 1 em jogo emocionante no Maracanã e manteve a liderança do Campeonato Brasileiro.</p>
+                    <p class="date">Publicado em: 15/06/2023</p>
+                </div>
+                
+                <div class="news-item">
+                    <h3>Arrascaeta é eleito melhor jogador do mês</h3>
+                    <img src="https://www.lance.com.br/files/article_main/uploads/2023/05/14/6460e8f8e9c9a.jpeg" alt="Arrascaeta">
+                    <p>O meia uruguaio Arrascaeta foi eleito o melhor jogador do mês de maio após atuações decisivas pelo Flamengo.</p>
+                    <p class="date">Publicado em: 10/06/2023</p>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="next-match">
+                    <h3>Próximo Jogo</h3>
+                    <div class="teams">
+                        <div class="team">
+                            <img src="https://logodownload.org/wp-content/uploads/2016/09/flamengo-logo-escudo-1.png" alt="Flamengo">
+                            <p>Flamengo</p>
+                        </div>
+                        <div class="vs">X</div>
+                        <div class="team">
+                            <img src="https://logodownload.org/wp-content/uploads/2016/09/palmeiras-logo-escudo-1.png" alt="Palmeiras">
+                            <p>Palmeiras</p>
+                        </div>
+                    </div>
+                    <p>Campeonato Brasileiro</p>
+                    <p>25/06/2023 - 16:00</p>
+                    <p>Maracanã - RJ</p>
+                </div>
+                
+                <h2>Classificação</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Time</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Flamengo</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Palmeiras</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Atlético-MG</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Fluminense</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Grêmio</td>
+                            <td>24</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Clube de Regatas do Flamengo - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook">f</i></a>
+                <a href="#"><i class="fab fa-twitter">t</i></a>
+                <a href="#"><i class="fab fa-instagram">i</i></a>
+                <a href="#"><i class="fab fa-youtube">y</i></a>
+            </div>
+            <p>Desenvolvido por um torcedor rubro-negro</p>
+        </div>
+    </footer>
+</body>
+</html>
