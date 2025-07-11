@@ -1,284 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flamengo - Paixão Nacional</title>
-    <style>
-        /* Reset e estilos gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(to right, #c52613, #8a1b0f);
-            padding: 20px 0;
-            border-bottom: 5px solid #000;
-        }
-        
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .logo {
-            width: 120px;
-            height: auto;
-        }
-        
-        h1 {
-            color: #fff;
-            margin: 10px 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Navegação */
-        nav {
-            background-color: #8a1b0f;
-            padding: 15px 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        
-        /* Conteúdo principal */
-        .main-content {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            color: #ffcc00;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: #ffcc00;
-            margin: 10px auto;
-        }
-        
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-            border: 3px solid #8a1b0f;
-        }
-        
-        /* Títulos */
-        .titles {
-            background-color: #1a1a1a;
-            padding: 40px 0;
-        }
-        
-        .titles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .title-card {
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
-            border-left: 4px solid #ffcc00;
-        }
-        
-        .title-card:hover {
-            transform: translateY(-5px);
-            background-color: #333;
-        }
-        
-        .title-card h3 {
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-        
-        /* Ídolos */
-        .idolos {
-            padding: 40px 0;
-        }
-        
-        .idolos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .idolo-card {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .idolo-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .idolo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .idolo-info {
-            padding: 15px;
-        }
-        
-        .idolo-info h3 {
-            color: #ffcc00;
-            margin-bottom: 5px;
-        }
-        
-        /* Rodapé */
-        footer {
-            background: linear-gradient(to right, #8a1b0f, #c52613);
-            color: #fff;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        
-        .social-links {
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #ffcc00;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-            
-            .about {
-                flex-direction: column;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENAI - Educação Profissional</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 0;
+      
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .menu_top {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .menu_top a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      
+    }
+    
+    main {
+      padding: 40px;
+    }
+    
+    .main-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      
+    }
+    
+    h1, h2 {
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      
+      padding-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    p {
+      margin-bottom: 15px;
+    }
+    
+    
+    .curso-lista {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .curso-item {
+      background-color: #eeeeee;
+      padding: 15px;
+      border-radius: 5px;
+     
+    }
+    
+    .contato-info {
+      margin-top: 20px;
+    }
+    
+    .contato-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .contato-icone {
+      width: 24px;
+      height: 24px;
+      margin-right: 15px;
+    }
+    
+    /* Rodapé */
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/2/2e/Clube_de_Regatas_do_Flamengo_%28BRA%29.svg/1200px-Clube_de_Regatas_do_Flamengo_%28BRA%29.svg.png" alt="Escudo do Flamengo" class="logo">
-            <h1>Clube de Regatas do Flamengo</h1>
-        </div>
-    </header>
+  
+  <header>
+    <div class="container header">
+      <div class="logo">SENAI</div>
+      <div class="menu_top">
+        <a href="sobre">Sobre</a>
+        <a href="cursos">Cursos</a>
+        <a href="contato">Contato</a>
+      </div>
+    </div>
+  </header>
+  
+  
+  <main class="container">
+    <div id="sobre" class="main-box">
+      <h1>Sobre o SENAI</h1>
+      <p>O SENAI é uma das principais instituições de educação
+         profissional do Brasil. Nossa missão é preparar os
+          jovens e trabalhadores para o mercado de trabalho com
+           foco em inovação, tecnologia e indústria 4.0.</p>
+      
     
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#titulos">Títulos</a></li>
-                <li><a href="#idolos">Ídolos</a></li>
-                <li><a href="#maracana">Maracanã</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="cursos" class="main-box">
+      <h2>Cursos Técnicos</h2>
+      
+      
+      <div class="curso-lista">
+        <div class="curso-item">Técnico em Desenvolvimento de Sistemas</div>
+        <div class="curso-item">Técnico em Mecatrônica</div>
+        <div class="curso-item">Técnico em Eletrotécnica</div>
+        <div class="curso-item">Técnico em Logística</div>
+        <div class="curso-item">Técnico em Administração</div>
+      </div>
+    </div>
     
-    <main class="main-content">
-        <section id="historia" class="about">
-            <div class="container">
-                <h2 class="section-title">História Rubro-Negra</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Fundado em 17 de novembro de 1895, o Clube de Regatas do Flamengo começou como um grupo de remo. O futebol só foi adotado em 1912, mas rapidamente se tornou a principal modalidade do clube.</p>
-                        <p>O Flamengo é conhecido como "O Mais Querido do Brasil" devido à sua enorme torcida, que se espalha por todo o país. Suas cores, vermelho e preto, são um símbolo de paixão e força no esporte brasileiro.</p>
-                        <p>O clube tem uma das torcidas mais apaixonadas e numerosas do mundo, com cerca de 40 milhões de torcedores, segundo pesquisas recentes.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://s2-ge.glbimg.com/1j6Fy3jY2J7J9Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1
+    <div id="contato" class="main-box">
+      <h2>Contato</h2>
+      
+      <div class="contato-info">
+        <div class="contato-item">
+          <img src="imagens/gps.png">
+          <a>Unidade SENAI Central- Rua da Indústria, 123, Centro</a>
+        </div>
+        
+        <div class="contato-item">
+          <img src="imagens/telephone.png">
+          <a>(11) 4002-8922</a>
+        </div>
+        
+        <div class="contato-item">
+          <img src="imagens/email (1).png">
+          <a>atendimento@senaibrasil.com.br</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+ 
+  <footer>
+    <div class="container">
+      <p>© 2025 SENAI - Serviço Nacional de Aprendizagem Industrial</p>
+    </div>
+  </footer>
+</body>
+</html>
